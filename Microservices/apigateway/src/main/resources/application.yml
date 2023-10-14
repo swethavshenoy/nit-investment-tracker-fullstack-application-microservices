@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: userauth
+          uri: lb://userauth
+          predicates:
+            - Path=/userauth/**
+          filters:
+            - StripPrefix=1
+
+        - id: transactionService
+          uri: lb://transactionService
+          predicates:
+            - Path=/transactionService/**
+          filters:
+            - StripPrefix=1
+
+        - id: watchlistservice
+          uri: lb://watchlistservice
+          predicates:
+            - Path=/watchlistservice/**
+          filters:
+            - StripPrefix=1
+
+        - id: performance
+          uri: lb://performance
+          predicates:
+            - Path=/performance/**
+          filters:
+            - StripPrefix=1
+
