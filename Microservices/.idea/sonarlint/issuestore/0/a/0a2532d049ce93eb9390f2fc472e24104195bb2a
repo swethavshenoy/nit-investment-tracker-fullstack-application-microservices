@@ -1,0 +1,16 @@
+
+h	java:S116"NRename this field "_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ν—ψ¨ύÿÿÿÿ
+H
+java:S1068"-Remove this unused "firstname" private field.(ψΒΖώÿÿÿÿ
+G
+java:S1068",Remove this unused "lastname" private field.(Η—ωθόÿÿÿÿ
+=
+java:S1068"'Remove this unused "dob" private field.(‚ª†Χ
+F
+java:S1068"+Remove this unused "address" private field.(χ§ωÿÿÿÿ
+E
+java:S1068"0Remove this unused "emailaddress" private field.(Ίιπ$
+G
+java:S1068",Remove this unused "password" private field.(γλ­ϊÿÿÿÿ
+G
+java:S1068",Remove this unused "usertype" private field.(αΉΆόÿÿÿÿ
