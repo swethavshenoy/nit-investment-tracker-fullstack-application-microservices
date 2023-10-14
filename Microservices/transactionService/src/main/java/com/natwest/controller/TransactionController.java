@@ -36,9 +36,8 @@ public class    TransactionController {
     @PostMapping("/add")
     public ResponseEntity<?> addTransaction(@RequestBody Transaction transaction) {
         try {
-            // Assuming you have a service method to save the transaction to the repository
             Transaction savedTransaction = transactionservice.addTransaction(transaction);
-            return ResponseEntity.ok(savedTransaction);
+               return ResponseEntity.ok(savedTransaction);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
         }
