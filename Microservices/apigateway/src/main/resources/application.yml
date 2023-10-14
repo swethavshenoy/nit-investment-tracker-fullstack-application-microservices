@@ -2,12 +2,12 @@ spring:
   cloud:
     gateway:
       routes:
-#        - id: client1
-#          uri: lb://client1
-#          predicates:
-#            - Path=/client1/**
-#          filters:
-#            - StripPrefix=1
+        - id: userauth
+          uri: lb://userauth
+          predicates:
+            - Path=/userauth/**
+          filters:
+            - StripPrefix=1
 
         - id: transactionService
           uri: lb://transactionService

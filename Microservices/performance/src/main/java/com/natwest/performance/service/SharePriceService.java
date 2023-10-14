@@ -16,4 +16,3 @@ public class SharePriceService {
         return sharepricerepository.findAll();
     }
 }
-

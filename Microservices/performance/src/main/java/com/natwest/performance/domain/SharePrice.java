@@ -20,5 +20,6 @@ public class SharePrice {
     private String company_name;
     private String month;
     private BigDecimal shareprice;
+
 }
 
