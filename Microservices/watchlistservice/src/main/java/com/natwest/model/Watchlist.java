@@ -13,15 +13,12 @@ import java.math.BigDecimal;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "watchlist_items")
+@Document(collection = "watchlist")
 public class Watchlist {
         @MongoId
         private String id;
-        private String investmentName;
-        private String assetType;
-        private BigDecimal currentPrice;
-        private Long volume;
-        private String industry;
-        private Double gainLoss;
-        private String state;
+        private String companyName;
+        private BigDecimal sharePrice;
+        private Long count;
+        private String returns;
 }

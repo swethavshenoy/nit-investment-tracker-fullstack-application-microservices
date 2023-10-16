@@ -2,6 +2,7 @@ package com.natwest.controller;
 
 import com.natwest.model.Watchlist;
 import com.natwest.service.WatchlistService;
+import org.hibernate.boot.jaxb.Origin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,31 +13,18 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("watchlist")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class WatchlistController {
     @Autowired
     private WatchlistService watchlistService;
-    @Autowired
-    WatchlistRepository watchlistrepository;
     @GetMapping("/")
-    public List<Watchlist> getAllTransactions() {
+    public ResponseEntity<List<Watchlist>> getAllWatchlist(){
+        return new ResponseEntity<List<Watchlist>>(watchlistService.getAllWatchlist(), HttpStatus.OK);
+    }
 
-       return watchlistrepository.findAll();
-    }
-    @PostMapping("/add")
-    public ResponseEntity<?> addToWatchlist(@RequestBody Watchlist watchlist) {
-        try {
-            Watchlist updatedWatchlist = watchlistService.addToWatchlist(watchlist);
-            return ResponseEntity.ok(updatedWatchlist);
-        } catch (Exception e) {
-            // Handle the exception, you can log it or return an error response
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
-        }
-    }
-    @GetMapping("/{userId}/trending")
-    public ResponseEntity<Map<String, String>> getTrendingStocksForUser(@PathVariable String userId) {
-        Map<String, String> trendingStocks = watchlistService.getTrendingStocks();
-        return ResponseEntity.ok(trendingStocks);
+    @PostMapping("/save")
+    public ResponseEntity<Watchlist> saveAWatchlist(@RequestBody Watchlist watchlist){
+        return new ResponseEntity<Watchlist>(watchlistService.saveAWatchlist(watchlist), HttpStatus.CREATED);
     }
 
 }

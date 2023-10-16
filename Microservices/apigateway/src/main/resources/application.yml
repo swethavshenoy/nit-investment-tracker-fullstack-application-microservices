@@ -9,17 +9,17 @@ spring:
           filters:
             - StripPrefix=1
 
-        - id: transactionService
-          uri: lb://transactionService
+        - id: history
+          uri: lb://history
           predicates:
-            - Path=/transactionService/**
+            - Path=/history/**
           filters:
             - StripPrefix=1
 
-        - id: watchlistservice
-          uri: lb://watchlistservice
+        - id: watchlist
+          uri: lb://watchlist
           predicates:
-            - Path=/watchlistservice/**
+            - Path=/watchlist/**
           filters:
             - StripPrefix=1
 

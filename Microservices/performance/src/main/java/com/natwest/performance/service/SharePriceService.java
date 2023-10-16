@@ -15,4 +15,8 @@ public class SharePriceService {
     public List<SharePrice> getAllSharePrice(){
         return sharepricerepository.findAll();
     }
+
+    public SharePrice saveAUser(SharePrice sharePrice) {
+        return sharePrice;
+    }
 }

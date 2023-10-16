@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 public class SharePrice {
 
     @Id
-    private Integer id;
+    private String id;
     @Column(name = "company_name")
     private String company_name;
     private String month;
