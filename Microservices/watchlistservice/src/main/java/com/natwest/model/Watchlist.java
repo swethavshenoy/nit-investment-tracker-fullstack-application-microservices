@@ -17,8 +17,9 @@ import java.math.BigDecimal;
 public class Watchlist {
         @MongoId
         private String id;
-        private String companyName;
-        private BigDecimal sharePrice;
+        private String logo;
+        private String name;
+        private BigDecimal shares;
         private Long count;
         private String returns;
 }

@@ -16,8 +16,9 @@ public class Trending {
 
     @MongoId
     private String id;
-    private String companyName;
-    private BigDecimal sharePrice;
+    private String logo;
+    private String name;
+    private String shares;
     private String returns;
     private String state;
 }
