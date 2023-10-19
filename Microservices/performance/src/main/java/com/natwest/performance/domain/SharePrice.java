@@ -16,10 +16,10 @@ public class SharePrice {
 
     @Id
     private String id;
-    @Column(name = "company_name")
-    private String company_name;
+    @Column(name = "name")
+    private String name;
     private String month;
-    private BigDecimal shareprice;
+    private BigDecimal amount;
 
 }
 

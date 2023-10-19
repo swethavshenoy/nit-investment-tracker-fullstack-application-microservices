@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.Date;
@@ -31,7 +32,7 @@ public class UserAuth {
     private String address;
     private String gender;
     private String usertype;
-    private BigInteger phoneno;
+    private BigDecimal phoneno;
     private String password;
 
 }

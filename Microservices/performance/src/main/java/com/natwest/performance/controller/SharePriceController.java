@@ -1,6 +1,7 @@
 package com.natwest.performance.controller;
 
 import com.natwest.performance.domain.SharePrice;
+import com.natwest.performance.domain.Transaction;
 import com.natwest.performance.repository.SharePriceRepository;
 import com.natwest.performance.service.SharePriceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,10 +31,10 @@ public class SharePriceController {
     }
 
     @GetMapping("/shareprice")
-    public String getAllTransactions(){
-        String url = "http://history/transactions/getAllTransactions";
-        String output = rt.getForObject(url, String.class);
-        return output;
+    public ResponseEntity<List<Transaction>> getAllTransactions(){
+        String url = "http://localhost:9975/transactions/";
+        List<Transaction> output = rt.getForObject(url, List.class);
+        return new ResponseEntity<List<Transaction>>(output, HttpStatus.OK);
     }
 
     @PostMapping("/add")

@@ -33,6 +33,11 @@ public class    TransactionController {
     public Optional<Transaction> getById(@PathVariable String id) {
         return transactionRepository.findById(id);
     }
+
+    @GetMapping("/by-email/{emailid}")
+    public List<Transaction> findTransactionsByEmail(@PathVariable String emailid) {
+        return transactionRepository.findAllByEmailid(emailid);
+    }
     @PostMapping("/add")
     public ResponseEntity<?> addTransaction(@RequestBody Transaction transaction) {
         try {
