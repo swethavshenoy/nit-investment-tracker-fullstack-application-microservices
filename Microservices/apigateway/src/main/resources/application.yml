@@ -3,30 +3,25 @@ spring:
     gateway:
       routes:
         - id: userauth
-          uri: lb://userauth
+          uri: http://localhost:9972
           predicates:
-            - Path=/userauth/**
-          filters:
-            - StripPrefix=1
+            - Path=/user-auth/**
 
         - id: history
-          uri: lb://history
+          uri: http://localhost:9975
           predicates:
-            - Path=/history/**
-          filters:
-            - StripPrefix=1
+            - Path=/transactions/**
+
 
         - id: watchlist
-          uri: lb://watchlist
+          uri: http://localhost:9973
           predicates:
-            - Path=/watchlist/**
-          filters:
-            - StripPrefix=1
+            - Path=/watchlist/**, /trending/**
+
 
         - id: performance
-          uri: lb://performance
+          uri: http://localhost:8085
           predicates:
-            - Path=/performance/**
-          filters:
-            - StripPrefix=1
+            - Path=/share-prices/**
+
 
