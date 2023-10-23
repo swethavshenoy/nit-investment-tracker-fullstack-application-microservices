@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("trending")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 public class TrendingController {
 
     @Autowired

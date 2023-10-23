@@ -24,5 +24,4 @@ public class WatchlistController {
     public ResponseEntity<Watchlist> saveAWatchlist(@RequestBody Watchlist watchlist){
         return new ResponseEntity<Watchlist>(watchlistService.saveAWatchlist(watchlist), HttpStatus.CREATED);
     }
-
 }
