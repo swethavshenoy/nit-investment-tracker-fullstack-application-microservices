@@ -7,12 +7,7 @@ import com.natwest.performance.service.SharePriceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.client.RestTemplate;
 
@@ -40,6 +35,14 @@ public class SharePriceController {
     public ResponseEntity<List<Transaction>> getAllTransactions(){
         String url = "http://localhost:9975/transactions/";
         List<Transaction> output = rt.getForObject(url, List.class);
+        return new ResponseEntity<List<Transaction>>(output, HttpStatus.OK);
+    }
+
+    @GetMapping("/by-email/shareprice")
+    public ResponseEntity<List<Transaction>> getAllTransactions(@RequestParam("emailid") String emailid) {
+        System.out.println(emailid);
+        String url = "http://localhost:9975/transactions/by-email/{emailid}";
+        List<Transaction> output = rt.getForObject(url, List.class, emailid);
         return new ResponseEntity<List<Transaction>>(output, HttpStatus.OK);
     }
 

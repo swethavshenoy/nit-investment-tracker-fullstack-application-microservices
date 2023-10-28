@@ -24,4 +24,9 @@ public class WatchlistController {
     public ResponseEntity<Watchlist> saveAWatchlist(@RequestBody Watchlist watchlist){
         return new ResponseEntity<Watchlist>(watchlistService.saveAWatchlist(watchlist), HttpStatus.CREATED);
     }
+
+    @PostMapping("/savelist")
+    public ResponseEntity<List<Watchlist>> saveAllWatchlist(@RequestBody List<Watchlist> watchlists){
+        return new ResponseEntity<List<Watchlist>>(watchlistService.saveAllWatchlist(watchlists), HttpStatus.CREATED);
+    }
 }

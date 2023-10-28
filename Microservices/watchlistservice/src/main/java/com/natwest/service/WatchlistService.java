@@ -19,4 +19,8 @@ public class WatchlistService {
     public Watchlist saveAWatchlist (Watchlist watchlist){
         return watchlistRepository.save(watchlist);
     }
+
+    public List<Watchlist> saveAllWatchlist (List<Watchlist> watchlists) {
+        return watchlistRepository.saveAll(watchlists);
+    }
 }

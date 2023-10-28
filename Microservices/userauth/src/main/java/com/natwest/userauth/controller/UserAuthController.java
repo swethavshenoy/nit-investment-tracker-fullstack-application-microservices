@@ -38,4 +38,4 @@ public class UserAuthController {
         return new ResponseEntity<UserAuth>(userAuthServ.saveAUser(userAuth), HttpStatus.CREATED);
     }
 
-}
+    }

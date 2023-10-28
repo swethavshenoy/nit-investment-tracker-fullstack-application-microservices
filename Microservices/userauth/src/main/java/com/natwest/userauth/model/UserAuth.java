@@ -12,7 +12,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Data
@@ -35,4 +34,4 @@ public class UserAuth {
     private BigDecimal phoneno;
     private String password;
 
-}
+  }

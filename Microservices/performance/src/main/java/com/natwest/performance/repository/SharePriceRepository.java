@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface SharePriceRepository extends JpaRepository<SharePrice, Integer> {
+public interface SharePriceRepository extends JpaRepository<SharePrice, String> {
 }

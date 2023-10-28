@@ -16,7 +16,7 @@ public class SharePrice {
 
     @Id
     private String id;
-    @Column(name = "name")
+    private String emailid;
     private String name;
     private String month;
     private BigDecimal amount;

@@ -51,4 +51,9 @@ public class TransactionController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
         }
     }
+
+    @PostMapping("/add-all-transaction")
+    public ResponseEntity<List<Transaction>> listTransaction(@RequestBody List<Transaction> transactions){
+        return new ResponseEntity<List<Transaction>>(transactionservice.listTransaction(transactions), HttpStatus.CREATED);
+    }
 }

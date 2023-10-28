@@ -21,6 +21,7 @@ public class Transaction {
     private String _id;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @JsonFormat(pattern = "yyyy-MM-dd")
+    private String emailid;
     private Date transactionDate;
     private String description;
     private String companyName;

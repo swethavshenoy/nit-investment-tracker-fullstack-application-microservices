@@ -36,4 +36,10 @@ public class TransactionService {
         return savedTransaction;
     }
 
+    public List<Transaction> listTransaction(List<Transaction> transactions) {
+        // Assuming your TransactionRepository is a JPA repository, you can save the transaction.
+        List<Transaction> savedTransaction = transactionRepository.saveAll(transactions);
+        return savedTransaction;
+    }
+
 }

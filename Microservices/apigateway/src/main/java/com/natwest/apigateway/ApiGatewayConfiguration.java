@@ -9,5 +9,6 @@ public class ApiGatewayConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**").allowedHeaders("*").allowedOrigins("http://localhost:7070");
+        registry.addMapping("/**/**").allowedHeaders("*").allowedOrigins("http://localhost:7070");
     }
 }
